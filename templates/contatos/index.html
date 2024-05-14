@@ -7,72 +7,31 @@
     {%include 'contatos/partials/_nav.html'%}
 
     <!-- Campo de pesquisa -->
-<div class="d-flex justify-content-end">
-    <div class="input-group w-50">
-        <input class="form-control" id="searchInput" type="text" placeholder="Pesquisar contato...">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-            <i class="bi bi-search"></i>
-        </button>
+    <div class="d-flex justify-content-end">
+        <div class="input-group w-50">
+            <input class="form-control" id="searchInput" type="text" placeholder="Pesquisar contato...">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
     </div>
-</div>
 
     <!-- Lista de contatos -->
     <ul class="list-group shadow mt-3">
+        {% for id_info, info in conts.items %}
         <li class="list-group-item d-flex align-items-center mb-2">
             <img src="https://observatoriodatv.uol.com.br/wp-content/uploads/2019/12/selton-mello2.jpg"
                 class="rounded-circle me-3 imaContato" alt="Foto de Maria Silva">
             <div class="flex-grow-1">
-                <a href="{% url 'contato' %}">Chico</a>
+                <a href="{% url 'contato' %}">{{info.nome}}</a>
             </div>
             <span>
                 <i class="bi bi-pencil-square text-primary" style="cursor:pointer;"></i>
                 <i class="bi bi-trash-fill text-danger ms-2" style="cursor:pointer;"></i>
             </span>
+            {% endfor %}
         </li>
-        <li class="list-group-item d-flex align-items-center mb-2">
-            <img src="https://www.opovo.com.br/noticiasimages/app/noticia_146418291334/2014/07/23/118384/joao-grilo-ator-escreve-carta-morre-ariano-suassuna.jpg"
-                class="rounded-circle me-3 imaContato" alt="Foto de Maria Silva">
-            <div class="flex-grow-1">
-                <a href="{% url 'contato' %}" class="text-decoration-none">João Grilo</a>
-            </div>
-            <span>
-                <i class="bi bi-pencil-square text-primary" style="cursor:pointer;"></i>
-                <i class="bi bi-trash-fill text-danger ms-2" style="cursor:pointer;"></i>
-            </span>
-        </li>
-        <li class="list-group-item d-flex align-items-center mb-2">
-            <img src="https://outraspalavras.net/wp-content/uploads/2020/06/200624-autodacompadecida.jpg"
-                class="rounded-circle me-3 imaContato" alt="Foto de Maria Silva">
-            <div class="flex-grow-1">
-                <a href="{% url 'contato' %}" class="text-decoration-none">Maria</a>
-            </div>
-            <span>
-                <i class="bi bi-pencil-square text-primary" style="cursor:pointer;"></i>
-                <i class="bi bi-trash-fill text-danger ms-2" style="cursor:pointer;"></i>
-            </span>
-        </li>
-        <li class="list-group-item d-flex align-items-center mb-2">
-            <img src="https://extra.globo.com/incoming/24174624-168-38a/w448/rosinha-de-o-auto-da-compadecida.jpg"
-                class="rounded-circle me-3 imaContato" alt="Foto de Maria Silva">
-            <div class="flex-grow-1">
-                <a href="{% url 'contato' %}" class="text-decoration-none">Rosianhe</a>
-            </div>
-            <span>
-                <i class="bi bi-pencil-square text-primary" style="cursor:pointer;"></i>
-                <i class="bi bi-trash-fill text-danger ms-2" style="cursor:pointer;"></i>
-            </span>
-        </li>
-        <li class="list-group-item d-flex align-items-center mb-2">
-            <img src="https://jornaldaparaiba.com.br/wp-content/uploads/2023/03/MARCO-NANINI.png"
-                class="rounded-circle me-3 imaContato" alt="Foto de Maria Silva">
-            <div class="flex-grow-1">
-                <a href="{% url 'contato' %}" class="text-decoration-none">Cangaceiro</a>
-            </div>
-            <span>
-                <i class="bi bi-pencil-square text-primary" style="cursor:pointer;"></i>
-                <i class="bi bi-trash-fill text-danger ms-2" style="cursor:pointer;"></i>
-            </span>
-        </li>
+
         <!-- Repita o formato do item acima para cada contato -->
     </ul>
 
