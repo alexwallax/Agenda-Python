@@ -6,7 +6,7 @@ from contatos.models import Contato
 
 def index(request):
     contatos = Contato.objects.all()
-    return render(request, 'contatos/index.html',  {'cont': contatos})
+    return render(request, 'contatos/index.html',  {'conts': contatos})
 
 def contato(request):
     return render(request, 'contatos/det_contato.html')
