@@ -24,7 +24,7 @@
             <img src="https://observatoriodatv.uol.com.br/wp-content/uploads/2019/12/selton-mello2.jpg"
                 class="rounded-circle me-3 imaContato" alt="Foto de Maria Silva">
             <div class="flex-grow-1">
-                <a href="{% url 'contato' %}">{{info.nome}}</a>
+                <a href="{% url 'contato' info.id %}">{{info.nome}}</a>
             </div>
             <span>
                 <i class="bi bi-pencil-square text-primary" style="cursor:pointer;"></i>
