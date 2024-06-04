@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from usuarios.forms import loginForms
+from usuarios.forms import LoginForms
 
 # Create your views here.
 def login(request):
-    forms = loginForms()
+    forms = LoginForms()
     return render(request, 'usuarios/login.html', {'form':forms})
 
 def logout(request):
